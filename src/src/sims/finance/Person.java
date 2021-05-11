@@ -1,7 +1,7 @@
 package sims.finance;
 
-public class FinanceBot {
-    private IncomeSource career;
+public class Person {
+    private TaxableIncomeSource career;
     private TradingAccount  trading;
     private BankAccount     bank;
 
