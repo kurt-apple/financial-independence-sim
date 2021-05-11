@@ -8,7 +8,12 @@ public class Account extends PassesTime {
 
   @Override
   public void nextMonth() { 
-    addTaxableIncome(balance.times(APY.getMonthlyRate()));
+    addTaxableIncome(getMonthlyInterest());
+    if()
+  }
+
+  public CashValue getMonthlyInterest() {
+    return getBalance().times(APY.getMonthlyRate());
   }
 
   public Account(CashValue balance, InterestRate apy) {
@@ -17,7 +22,7 @@ public class Account extends PassesTime {
   }
 
   public CashValue getBalance() { 
-    return balance; 
+    return startbalance.plus(taxableincome); 
   }
 
   public void setBalance(CashValue balance) { 

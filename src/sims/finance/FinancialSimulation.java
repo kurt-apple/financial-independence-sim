@@ -8,7 +8,8 @@ public class FinancialSimulation {
   public FinancialSimulation() {
     time      = new Time();
     inflation = new InterestRate(Constants.PESSIMISM.INFLATION);
-    person    = new Person();
+    person    = new Person()
+      .setSimulation(this);
   }
   
   public FinancialSimulation setInflation(double i) {
