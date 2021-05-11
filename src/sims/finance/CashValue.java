@@ -50,6 +50,10 @@ public class CashValue {
         return this.value > 0 ? x : this.value + x;
     }
 
+    public double times(double x) {
+        return this.value * x;
+    }
+
     public void applyAPM(InterestRate rate) {
         this.value = format(this.value * (1+rate.getMonthlyRate()));
     }

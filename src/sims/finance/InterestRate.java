@@ -1,7 +1,7 @@
 package sims.finance;
 
 public class InterestRate {
-  private double annualRate;
+  private Double annualRate;
 
   public InterestRate(double rate) {
     annualRate = rate;

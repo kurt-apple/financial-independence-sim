@@ -1,10 +1,7 @@
 package sims.finance;
 
-public class BankAccount extends CashValue implements PassesTime {
-    private CashValue balance;
-    private InterestRate APY;
-    @Override
-    public void nextMonth() {
-        balance*=APY.getMonthlyRate();
-    }
+public class BankAccount extends Account {
+  public BankAccount(CashValue balance, InterestRate apy) {
+    super(balance, apy);
+  }
 }

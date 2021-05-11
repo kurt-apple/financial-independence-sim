@@ -10,7 +10,7 @@ public interface Constants {
     }
     interface PESSIMISM {
         double INFLATION    = 0.031;
-        double TRADINGAPY   = 0.08;
+        double TRADINGAPY   = 0.07;
         double RAISE        = 0.011;
     }
 }
