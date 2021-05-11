@@ -8,7 +8,6 @@ public class FinancialSimulation {
   public FinancialSimulation() {
     time      = new Time();
     inflation = new InterestRate(Constants.PESSIMISM.INFLATION);
-    taxrate   = new InterestRate(Constants.PESSIMISM.TAXRATE);
     person    = new Person();
   }
   

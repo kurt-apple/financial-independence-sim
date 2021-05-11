@@ -54,6 +54,10 @@ public class CashValue {
         return this.value * x;
     }
 
+    public double dividedby(double x) {
+        return this.value / x;
+    }
+
     public void applyAPM(InterestRate rate) {
         this.value = format(this.value * (1+rate.getMonthlyRate()));
     }

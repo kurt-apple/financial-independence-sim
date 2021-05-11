@@ -1,14 +1,13 @@
 package sims.finance;
 
 public class TaxableIncome {
-    private int year;
-    private double total_income;
+  private CashValue taxable;
 
-    public void addIncome(double taxable) {
-        total_income += taxable;
-    }
+  public void addIncome(double taxable) {
+    total_income += taxable;
+  }
 
-    public double getTaxes() {
+  public double getTaxes() {
 
-    }
+  }
 }

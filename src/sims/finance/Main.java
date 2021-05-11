@@ -10,5 +10,6 @@ public class Main {
     FinancialSimulation sim = new FinancialSimulation();
     System.out.print("Menu\n1. Sweep\n2. Custom\n> ");
     Scanner scan = new Scanner(System.in);
+    sim.runSim(new Scanner(System.in).nextInt());
   }
 }

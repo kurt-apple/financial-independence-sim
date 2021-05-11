@@ -1,7 +1,8 @@
 package sims.finance;
 
 public class Account extends PassesTime {
-  protected CashValue balance;
+  protected CashValue startbalance;
+  protected CashValue taxableincome;
   protected InterestRate APY;
   protected TaxableIncome interestAccrued;
 

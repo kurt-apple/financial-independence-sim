@@ -1,7 +1,7 @@
 package sims.finance;
 
 public class TaxableIncomeSource extends Taxable implements PassesTime {
-  private double income;
+  private CashValue income;
   private double ARO;
   private InterestRate annualRaise;
 
@@ -39,6 +39,10 @@ public class TaxableIncomeSource extends Taxable implements PassesTime {
 
   @Override
   public void nextMonth() {
+    this.addTaxableIncome(income.dividedby(12));
+  }
 
+  public CashValue getTaxableIncome() {
+    return 
   }
 }
