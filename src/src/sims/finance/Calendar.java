@@ -10,7 +10,7 @@ public class Calendar implements PassesTime {
     }
 
     @Override
-    public void nextMonth() {
+    public boolean nextMonth() {
         if(month == 11) {
             year++;
             month = 0;

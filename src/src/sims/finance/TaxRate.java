@@ -37,7 +37,7 @@ public class TaxRate {
 
     public InterestRate getTaxRate(Person p) {
         CashValue taxable = p.getTaxableIncome();
-        if(p.isMarried) {
+        if(p.isMarried()) {
             for(TaxBracket b : joint_brackets) {
                 if (b.endOfBracket < taxable) continue;
                 else if(b.startOfBracket < taxable) {

@@ -7,6 +7,10 @@ public class InterestRate {
     annualRate = rate;
   }
 
+  public InterestRate(InterestRate annualRaise) {
+    this.annualRate = annualRaise.annualRate;
+  }
+
   public void setAnnualRate(double rate) {
     annualRate = rate;
   }
