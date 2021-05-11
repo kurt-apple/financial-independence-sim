@@ -1,8 +1,14 @@
+package sims.finance;
+
 public class InterestRate {
   private double annualRate;
 
   public InterestRate(double rate) {
     annualRate = rate;
+  }
+
+  public InterestRate(InterestRate annualRaise) {
+    this.annualRate = annualRaise.annualRate;
   }
 
   public void setAnnualRate(double rate) {
@@ -14,6 +20,6 @@ public class InterestRate {
   }
 
   public double getMonthlyRate() {
-    return (1+annualRate)^(1/12);
+    return Utils.pow4(1+annualRate, 1.0/12);
   }
 }

@@ -1,6 +1,7 @@
 package sims.finance;
 
 public class FinancialSimulation {
+    private Calendar cal;
     private double inflation;
     private double taxrate;
     public FinancialSimulation() {

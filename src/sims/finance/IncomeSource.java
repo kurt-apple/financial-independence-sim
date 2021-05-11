@@ -1,6 +1,6 @@
 package sims.finance;
 
-public class IncomeSource implements PassesTime {
+public class TaxableIncomeSource implements PassesTime {
   private double income;
   private double ARO;
   private InterestRate annualRaise;
