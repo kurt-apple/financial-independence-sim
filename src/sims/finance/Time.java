@@ -1,5 +1,6 @@
 package sims.finance;
 
+//TODO: showdown between Calendar and Time (virtually the same) #codeslinging
 public class Time implements PassesTime {
 	static Integer year = 0;
 	static Integer month = 0;

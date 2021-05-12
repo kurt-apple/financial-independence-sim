@@ -25,8 +25,8 @@ public class CashValue {
         return a.get() > b.get();
     }
 
-    public boolean lt(CashValue a, CashValue b) {
-        return a.get() < b.get();
+    public boolean lt(CashValue x) {
+        return this.get() < x.get();
     }
 
     public boolean gte(CashValue a, CashValue b) {

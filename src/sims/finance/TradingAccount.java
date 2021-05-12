@@ -1,7 +1,8 @@
 package sims.finance;
 
 public class TradingAccount extends Account {
-  public TradingAccount() {
+  FinancialSimulation fs;
+  public TradingAccount(FinancialSimulation fs) {
     super();
   }
 }

@@ -1,23 +1,33 @@
 package sims.finance;
 
-public class FinancialSimulation {
+public class FinancialSimulation implements PassesTime {
   private Time          time;
   private InterestRate  inflation;
-  private Person        person;
+  private Household     household;
 
   public FinancialSimulation() {
     time      = new Time();
     inflation = new InterestRate(Constants.PESSIMISM.INFLATION);
-    person    = new Person()
+    household = new Household()
       .setSimulation(this);
   }
   
-  public FinancialSimulation setInflation(double i) {
+  public FinancialSimulation setInflation(InterestRate i) {
     inflation = i;
     return this;
   }
 
-  public void setPerson(Person p) {
-    this.person = p;
+  public void setHousehold(Household p) {
+    this.household = p;
+  }
+
+  @Override
+  public void nextMonth() {
+    household.nextMonth();
+  }
+
+  //TODO:
+  public void runSim(int nextInt) {
+
   }
 }

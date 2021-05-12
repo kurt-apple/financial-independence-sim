@@ -1,17 +1,22 @@
 package sims.finance;
 
-public class Account extends PassesTime {
+public class Account implements PassesTime {
+  //TODO: is there a better way to do this
+  FinancialSimulation fs;
   protected CashValue startbalance;
+  //TODO: need a way to tell if this is a new year.
   protected CashValue taxableincome;
   protected InterestRate APY;
   protected TaxableIncome interestAccrued;
 
   @Override
-  public void nextMonth() { 
+  public void nextMonth() {
+    //TODO: implement this
     addTaxableIncome(getMonthlyInterest());
     if()
   }
 
+  //TODO: return CashValue from CashValue.times()
   public CashValue getMonthlyInterest() {
     return getBalance().times(APY.getMonthlyRate());
   }

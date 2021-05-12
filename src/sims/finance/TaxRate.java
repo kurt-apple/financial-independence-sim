@@ -3,8 +3,9 @@ package sims.finance;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+//TODO: Is static the best way to handle this?
 public class TaxRate {
-  class TaxBracket {
+  static class TaxBracket {
     InterestRate  rate;
     CashValue     startOfBracket;
     CashValue     endOfBracket;
@@ -15,7 +16,10 @@ public class TaxRate {
       endOfBracket    = new CashValue(end);
     }
   }
-  final LinkedList<TaxBracket> joint_brackets = new LinkedList<>(Arrays.asList(
+
+  //TODO: Implement head of household bracket
+  //TODO: Decide whether to put tax rate as t or 1-t.
+  static final LinkedList<TaxBracket> joint_brackets = new LinkedList<>(Arrays.asList(
           new TaxBracket(0.90,  0,      19900.99  ),
           new TaxBracket(0.88,  19901,  81050.99  ),
           new TaxBracket(0.78,  81051,  172750.99 ),
@@ -35,13 +39,17 @@ public class TaxRate {
           new TaxBracket(0.63,  523600, 1000000000)
   ));
 
-  public static InterestRate getTaxRate(Person p) {
-    CashValue taxable = p.getTaxableIncome();
-    if(p.isMarried()) {
+  //TODO: implement graduated tax bracket.
+  // first $10K taxed at 10%, next $31K taxed at 12%.
+  //TODO: make this less shitty
+  public static InterestRate getTaxRate(Household h) throws Exception {
+    CashValue taxable = h.getTaxableIncome();
+    if(h.isMarried()) {
       for(TaxBracket b : joint_brackets) {
-        if (b.endOfBracket < taxable) continue;
-        else if(b.startOfBracket < taxable) return b.rate;
+        if (b.endOfBracket.lt(taxable)) continue;
+        else if(b.startOfBracket.lt(taxable)) return b.rate;
       }
     };
+    throw new Exception("Income of household doesn't make sense");
   }
 }
