@@ -1,9 +1,9 @@
 package sims.finance;
 
 public class Household implements PassesTime {
-  private FinancialSimulation sim;
   private TaxableIncomeSource career;
   private TradingIncomeSource trading;
+  private CashValue           taxes;
   private BankAccount         bank;
   private boolean             married;
 
@@ -39,6 +39,10 @@ public class Household implements PassesTime {
 
   @Override
   public void nextMonth() {
-
+    if(FinancialSimulation.time.isNewYear()) {
+      taxes.set(TaxRate.calculateTaxes(getTaxableIncome()));
+    }
+    addTaxableIncome(career.getIncome());
+    TradingAccount.nextMonth();
   }
 }

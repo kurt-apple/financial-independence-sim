@@ -52,4 +52,8 @@ public class TaxRate {
     };
     throw new Exception("Income of household doesn't make sense");
   }
+
+  public static CashValue calculateTaxes(CashValue c) throws Exception {
+    return c.times(getTaxRate(c));
+  }
 }

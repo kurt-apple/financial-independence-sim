@@ -1,7 +1,7 @@
 package sims.finance;
 
 public class FinancialSimulation implements PassesTime {
-  private Time          time;
+  protected static Time time;
   private InterestRate  inflation;
   private Household     household;
 
@@ -23,6 +23,7 @@ public class FinancialSimulation implements PassesTime {
 
   @Override
   public void nextMonth() {
+    time.nextMonth();
     household.nextMonth();
   }
 
